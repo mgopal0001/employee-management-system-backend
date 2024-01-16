@@ -9,11 +9,9 @@ router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    console.log({ email, password });
 
     const admin = await Admin.findOne({ email });
 
-    console.log({ admin });
 
     if (!admin) {
       return res.status(401).json({
