@@ -6,7 +6,7 @@ const connectDB = require("../persistence/connectDB");
 const admins = [
   {
     name: "Madan gopal",
-    email: "mgopal.0001@gmail.com",
+    email: "madan@gmail.com",
     password: config.admin.password,
   },
 ];
@@ -35,7 +35,7 @@ const addAdmins = async (admins) => {
 };
 
 const init = async () => {
-  await connectDB(config.mongo.uri, config.mongo.db);
+  await connectDB(config.database.uri, config.database.db);
   await addAdmins(admins);
 };
 
